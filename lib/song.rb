@@ -8,11 +8,11 @@ class Song
 
   def save
     self.class.all << self
+    save
   end
 
   def self.create
     song = self.new
-    #@@all << song
     song
   end
   
@@ -34,8 +34,7 @@ class Song
   end
   
   def self.find_or_create_by_name(name)
-    
-      self.find_by_name(name) || self.create_by_name(name)
+     self.find_by_name(name) || self.create_by_name(name)
       
   end
   
